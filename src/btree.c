@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <assert.h>
 
-#include "btree.h"
+#include "../include/btree.h"
 
 btree newNode()
 {

@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "queue.h"
-#include <string.h>
 
+#include <string.h>
+#include "../include/queue.h"
 
 
 void init(struct queue *q)

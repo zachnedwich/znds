@@ -1,14 +1,13 @@
 CC=gcc
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=src/btree.c src/queue.c
-OBJECTS=$(SOURCES:.c=.o)
+SOURCES=src/btree.c src/queue_test.c
 EXECUTABLE=bin/btree bin/queue
 
 all: $(SOURCES) $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+$(EXECUTABLE): $(SOURCES)
+	$(CC) $(LDFLAGS) $(SOURCES) -o $@
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
@@ -16,8 +15,8 @@ $(EXECUTABLE): $(OBJECTS)
 clean:
 	rm -rf src/*o bin/*exe
 
-queue: src/queue.c
-	$(CC) $(LDFLAGS) src/queue.c -o bin/$@
+queue: src/queue_test.c
+	$(CC) $(LDFLAGS) src/queue_test.c -o bin/$@
 
 btree: src/btree.c
 	$(CC) $(LDFLAGS) src/btree.c -o bin/$@
